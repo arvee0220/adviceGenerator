@@ -8,8 +8,8 @@
 	align-items: center;
 
 	.card {
-		width: 40%;
-		height: 20%;
+		width: 60%;
+		height: 30%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -23,7 +23,6 @@
 			text-align: center;
 			display: flex;
 			align-items: center;
-			height: 580px;
 		}
 
 		button {
@@ -35,7 +34,7 @@
 			align-items: center;
 			cursor: pointer;
 			text-transform: uppercase;
-			height: 400px;
+			height: 200px;
 			width: 210px;
 			opacity: 1;
 			background-color: #ffffff4b;

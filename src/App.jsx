@@ -5,12 +5,14 @@ import "./App.scss";
 const App = () => {
 	const { advice, fetchAdvice } = useContext(AdviceContext);
 
+	const clickHandler = () => fetchAdvice();
+
 	return (
 		<>
 			<div className="app">
 				<div className="card">
 					<h1 className="advice">{advice}</h1>
-					<button onClick={() => fetchAdvice()}>Get an Advice</button>
+					<button onClick={clickHandler}>Get an Advice</button>
 				</div>
 			</div>
 		</>
