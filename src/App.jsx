@@ -1,9 +1,23 @@
-import { useContext } from "react";
-import { AdviceContext } from "./context/advice.context";
+import { useState, useEffect } from "react";
 import "./App.scss";
 
 const App = () => {
-	const { advice, fetchAdvice } = useContext(AdviceContext);
+	const [advice, setAdvice] = useState("");
+
+	const fetchAdvice = async () => {
+		try {
+			const fetchAdvice = await fetch("https://api.adviceslip.com/advice");
+			const adviceRes = await fetchAdvice.json();
+
+			setAdvice(adviceRes.slip.advice);
+		} catch (error) {
+			console.log("Failed to get advice: ", error);
+		}
+	};
+
+	useEffect(() => {
+		fetchAdvice();
+	}, []);
 
 	return (
 		<>
